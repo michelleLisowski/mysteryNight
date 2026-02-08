@@ -137,10 +137,15 @@ const NoirScavengerHunt = () => {
 
   const handleSubmitAnswer = () => {
     const team = teams[selectedTeam];
-    const correctAnswer = team.clues[currentClue].answer.toLowerCase().trim();
     const submittedAnswer = userAnswer.toLowerCase().trim();
+    const acceptedAnswers = Array.isArray(team.clues[currentClue].answer)
+      ? team.clues[currentClue].answer
+      : [team.clues[currentClue].answer];
+    const isCorrect = acceptedAnswers.some(
+      (answer) => answer.toLowerCase().trim() === submittedAnswer
+    );
 
-    if (submittedAnswer === correctAnswer) {
+    if (isCorrect) {
       setError('');
       setUserAnswer('');
       
