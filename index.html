@@ -52,7 +52,8 @@
                   hint: "A few stories aloft (eight, give or take), in rooms that keep office hours and small consolations."
                 }
               ],
-              conclusion: "Outstanding work, detective. You've uncovered THE WEAPON: the Theta Tau paddle. Only a true member of the brotherhood would know how to wield it with such precision. The peanut butter was a clever red herring, but the real clue was in the physics of the crime scene. The ideal gas law was the final piece that revealed how the weapon was used to create a vacuum, causing the fatal incident."
+              conclusion: "Outstanding work, detective. You've uncovered THE WEAPON: the Theta Tau paddle. Only a true member of the brotherhood would know how to wield it with such precision.",
+              conclusionImage: "components/PADDLE.png"
             },
             electrical: {
               name: "Electrical Engineering",
@@ -274,12 +275,19 @@
                     </div>
                     <div className="bg-gray-900 p-6 border-l-4" style={{ borderColor: team.color }}>
                       <p className="text-gray-300 text-lg leading-relaxed">{team.conclusion}</p>
+                      {team.conclusionImage && (
+                        <img
+                          src={team.conclusionImage}
+                          alt="Theta Tau paddle"
+                          className="mt-6 mx-auto max-w-full h-auto rounded shadow-lg"
+                        />
+                      )}
                     </div>
                   </div>
 
                   <div className="text-center">
                     <p className="text-xl text-gray-300 mb-6">
-                      Report your findings to the Chief Inspector immediately.
+                      Report your findings to the Chief Inspectors immediately.
                     </p>
                     <p className="text-gray-400 mb-8">
                       The other teams are still gathering evidence. Once all pieces are assembled, the full truth will be revealed.
