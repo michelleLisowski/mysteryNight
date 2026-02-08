@@ -8,6 +8,13 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @font-face {
+        font-family: "Top Secret";
+        src: url("components/[TOP_SECRET].ttf") format("truetype");
+        font-display: swap;
+      }
+    </style>
 </head>
 <body>
     <div id="root"></div>
@@ -199,32 +206,22 @@
           // Landing page - team selection
           if (!selectedTeam) {
             return (
-              <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-gray-100 p-8">
+              <div className="min-h-screen bg-gray-900 text-gray-100 p-8">
                 <div className="max-w-4xl mx-auto">
                   <div className="text-center mb-12">
-                    <h1 className="text-6xl font-bold mb-4 text-amber-400" style={{ fontFamily: 'Georgia, serif', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
-                      THE ENGINEERING MYSTERY
+                    <h1 className="text-6xl font-bold mb-4" style={{ fontFamily: '"Top Secret", serif', color: '#801517', textShadow: '0 6px 16px rgba(0,0,0,0.35)' }}>
+                      THE UPSILON GAMMA WHODUNNIT
                     </h1>
                     <div className="h-1 w-32 bg-amber-400 mx-auto mb-6"></div>
-                    <p className="text-xl text-gray-300 italic mb-2">A crime has been committed in the Engineering Building.</p>
-                    <p className="text-lg text-gray-400">Five teams. Five pieces of evidence. One truth.</p>
+                    <p className="text-xl text-gray-300 italic mb-2">An awful crime has been committed in the Engineering Building!</p>
+                    <p className="text-lg text-gray-400">Work together to avenge Aaron and bring glory to Upsilon Gamma!</p>
                   </div>
 
-                  <div className="bg-gray-800 border-2 border-amber-600 p-8 mb-8 shadow-2xl">
-                    <h2 className="text-2xl font-bold mb-4 text-amber-300">THE CASE FILE</h2>
-                    <p className="text-gray-300 mb-4">
-                      Tonight, at 6:30 PM, a terrible incident occurred within the Engineering Building. The perpetrator possessed advanced engineering knowledge and had access to 
-                      multiple locations within the building.
-                    </p>
-                    <p className="text-gray-300 mb-4">
-                      It is up to you and your team to piece together the clues, analyze the evidence, and solve the mystery. Each team will focus on a different aspect of the case,
-                      and only by working together can the full story be uncovered!
-                    </p>
-                    <p className="text-gray-300">
-                      Your team has been assigned to investigate one crucial aspect of this case. 
-                      Follow the clues, crack the codes, and uncover the truth.
-                    </p>
-                  </div>
+                  <img
+                    src="components/CASE FILE!.png"
+                    alt="Case file"
+                    className="w-[110%] max-w-none -mx-[5%] mb-8 shadow-2xl"
+                  />
 
                   <h2 className="text-3xl font-bold mb-6 text-center text-amber-400">SELECT YOUR INVESTIGATION TEAM</h2>
                   
@@ -258,7 +255,7 @@
           // Completion screen
           if (completed) {
             return (
-              <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-gray-100 p-8">
+              <div className="min-h-screen bg-gray-900 text-gray-100 p-8">
                 <div className="max-w-3xl mx-auto">
                   <div className="text-center mb-8">
                     <h1 className="text-5xl font-bold mb-4 text-amber-400" style={{ fontFamily: 'Georgia, serif' }}>
@@ -303,7 +300,7 @@
           const currentClueData = team.clues[currentClue];
           
           return (
-            <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-gray-100 p-8">
+            <div className="min-h-screen bg-gray-900 text-gray-100 p-8">
               <div className="max-w-3xl mx-auto">
                 <div className="mb-8">
                   <button
@@ -354,7 +351,7 @@
                       value={userAnswer}
                       onChange={(e) => setUserAnswer(e.target.value)}
                       onKeyPress={handleKeyPress}
-                      placeholder="Type the location you've found..."
+                      placeholder="Type the answer you believe is correct..."
                       className="w-full bg-gray-900 border-2 border-gray-600 px-4 py-3 text-white placeholder-gray-500 focus:border-amber-500 focus:outline-none mb-4"
                     />
                     
