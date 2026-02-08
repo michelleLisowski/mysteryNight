@@ -17,44 +17,44 @@ const NoirScavengerHunt = () => {
       clues: [
         {
           text: "Your investigation begins in the heart of motion and machines. The first witness mentioned seeing suspicious activity near the place where metal meets precision. Search where the lathes spin and the mills grind.",
-          answer: "machine shop",
-          hint: "Where raw metal becomes precision parts"
+          answer: ["1/4"],
+          hint: "Where one might take Engineering Projects"
         },
         {
-          text: "The plot thickens. A blueprint was found torn and discarded. The next clue lies where autonomous creations come to life, where gears and circuits dance in mechanical harmony.",
-          answer: "robotics lab",
-          hint: "Where machines learn to move on their own"
+          text: "The plot thickens! We found some peanut butter at the scene, and it’s not just a snack. The next clue is hidden where someone would want to eat in secret in the EC Lobby",
+          answer: ["Newton", "N", "Newtons"],
+          hint: "Beneath the planet that hangs, silent and watchful, above the stairs"
         },
         {
-          text: "You're close now, detective. The final piece of your investigation awaits where forces are measured and materials are tested to their breaking point. Find where strength meets science.",
-          answer: "testing lab",
-          hint: "Where we discover what materials can withstand"
+          text: "You're close now, detectives! The final piece of your investigation awaits high above the EC Lobby, where students can gain knowledge from their professors.",
+          answer: ["Ideal Gas Law", "Ideal gas law", "ideal gas law"],
+          hint: "A few stories aloft (eight, give or take), in rooms that keep office hours and small consolations."
         }
       ],
-      conclusion: "Outstanding work, detective. You've uncovered THE WEAPON: a precision-machined torque wrench from the testing lab. This wasn't just any tool - it was specially calibrated, and only someone with mechanical engineering knowledge could have wielded it so effectively."
+      conclusion: "Outstanding work, detective. You've uncovered THE WEAPON: the Theta Tau paddle. Only a true member of the brotherhood would know how to wield it with such precision. The peanut butter was a clever red herring, but the real clue was in the physics of the crime scene. The ideal gas law was the final piece that revealed how the weapon was used to create a vacuum, causing the fatal incident."
     },
     electrical: {
       name: "Electrical Engineering",
       color: "#4a90e2",
-      evidence: "THE TIME OF CRIME",
+      evidence: "THE METHOD OF SABOTAGE",
       clues: [
         {
           text: "Your case starts where current flows and circuits come alive. The security logs show a power fluctuation at a critical moment. Begin your search where breadboards and oscilloscopes reveal the truth.",
-          answer: "circuits lab",
+          answer: ["Ampere", "A", "Amperes", "Amps"],
           hint: "Where students build and test electronic circuits"
         },
         {
-          text: "Interesting. A burnt capacitor, intentionally damaged. The trail leads to where energy is converted and distributed throughout the building. Investigate where voltage is transformed.",
-          answer: "power systems room",
-          hint: "The electrical heart of the building"
+          text: "Interesting. A burnt capacitor, intentionally damaged. The trail leads to where energy is distributed to students in the building. Investigate where students fuel up for their studies!",
+          answer: ["Ohm's Law", "Ohm's law", "ohm's law", "Ohm's", "ohm's"],
+          hint: "Up for an energy boost? Check where the coffee machines hum and students gather for a quick recharge."
         },
         {
-          text: "The timestamp on the damaged equipment tells a story. Your final clue awaits where electromagnetic waves are studied and signals are analyzed. Find the place where the invisible becomes visible.",
-          answer: "signals lab",
-          hint: "Where we study waves and frequencies"
+          text: "The timestamp on the damaged equipment tells a story. From cheat sheets to reports, find where the final piece of the puzzle is printed!",
+          answer: ["alternating current", "AC", "ac", "Alternating current"],
+          hint: "Where findings come out on paper and get quietly circulated on paper!"
         }
       ],
-      conclusion: "Excellent detective work. You've pinpointed THE TIME OF CRIME: 10:47 PM, confirmed by the power surge recorded in the signals lab. The sabotaged equipment created a precise electrical signature that timestamps the entire incident."
+      conclusion: "Excellent detective work. You've pinpointed THE METHOD OF SABOTAGE: a carefully orchestrated electromagnetic pulse (EMP) attack. The burnt capacitor was a key component in the EMP device, and the power fluctuation was the moment it was activated. The clues all pointed to the electrical systems of the building, and the final piece revealed how the saboteur disrupted the power supply to critical equipment, causing chaos and confusion."
     },
     civil: {
       name: "Civil Engineering",
@@ -185,8 +185,11 @@ const NoirScavengerHunt = () => {
           <div className="bg-gray-800 border-2 border-amber-600 p-8 mb-8 shadow-2xl">
             <h2 className="text-2xl font-bold mb-4 text-amber-300">THE CASE FILE</h2>
             <p className="text-gray-300 mb-4">
-              Last night at approximately 10:47 PM, a sophisticated crime was executed in this very building. 
-              The perpetrator possessed advanced engineering knowledge and had access to multiple laboratories.
+              Tonight, at 6:30 PM, a terrible incident occurred within the Engineering Building. The perpetrator possessed advanced engineering knowledge and had access to 
+              multiple locations within the building. 
+
+              It is up to you and your team to piece together the clues, analyze the evidence, and solve the mystery. Each team will focus on a different aspect of the case,
+              and only by working together can the full story be uncovered! 
             </p>
             <p className="text-gray-300">
               Your team has been assigned to investigate one crucial aspect of this case. 
@@ -214,7 +217,7 @@ const NoirScavengerHunt = () => {
           </div>
 
           <div className="mt-12 text-center text-gray-500 text-sm">
-            <p>Case File #ENG-2026-047 | CLASSIFIED</p>
+            <p>Case File #ENG-06070609 | CLASSIFIED</p>
           </div>
         </div>
       </div>
@@ -315,7 +318,7 @@ const NoirScavengerHunt = () => {
 
           <div className="border-t border-gray-700 pt-6">
             <label className="block text-sm font-bold mb-3 text-gray-400">
-              ENTER LOCATION:
+              ENTER ANSWER TO RIDDLE:
             </label>
             <input
               type="text"
