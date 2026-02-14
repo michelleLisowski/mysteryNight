@@ -157,14 +157,21 @@
             setCompleted(false);
           };
 
+          const normalizeAnswer = (value) =>
+            value
+              .toLowerCase()
+              .trim()
+              .replace(/[’‘]/g, "'")
+              .replace(/\s+/g, ' ');
+
           const handleSubmitAnswer = () => {
             const team = teams[selectedTeam];
-            const submittedAnswer = userAnswer.toLowerCase().trim();
+            const submittedAnswer = normalizeAnswer(userAnswer);
             const acceptedAnswers = Array.isArray(team.clues[currentClue].answer)
               ? team.clues[currentClue].answer
               : [team.clues[currentClue].answer];
             const isCorrect = acceptedAnswers.some(
-              (answer) => answer.toLowerCase().trim() === submittedAnswer
+              (answer) => normalizeAnswer(answer) === submittedAnswer
             );
 
             if (isCorrect) {
@@ -358,7 +365,7 @@
                       type="text"
                       value={userAnswer}
                       onChange={(e) => setUserAnswer(e.target.value)}
-                      onKeyPress={handleKeyPress}
+                      onKeyDown={handleKeyPress}
                       placeholder="Type the answer you believe is correct..."
                       className="w-full bg-gray-900 border-2 border-gray-600 px-4 py-3 text-white placeholder-gray-500 focus:border-amber-500 focus:outline-none mb-4"
                     />
